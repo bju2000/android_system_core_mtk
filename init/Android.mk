@@ -10,6 +10,11 @@ else
 init_options += -DALLOW_LOCAL_PROP_OVERRIDE=0 -DALLOW_DISABLE_SELINUX=0
 endif
 
+# Enable MTK stuff
+ifeq ($(BOARD_HAS_MTK_HARDWARE), true)
+LOCAL_CFLAGS += -DMTK_HARDWARE
+endif
+
 init_options += -DLOG_UEVENTS=0
 
 init_cflags += \
